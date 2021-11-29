@@ -12,11 +12,11 @@
   {% assign sidenavstyle = site.data.sidenavstyle[lang] %}
 
   {% if page.collection == "cci2" %}
-    {% include_cached global-nav.html site=site page=page lang=lang sidenav=sidenavcci2 current_url=current_url %}
+    {% include_cached global-nav.html site=site page=page sidenav=sidenavcci2 current_url=current_url %}
   {% elsif page.collection == "style" %}
-    {% include_cached global-nav.html site=site page=page lang=lang sidenav=sidenavstyle current_url=current_url %}
+    {% include_cached global-nav.html site=site page=page sidenav=sidenavstyle current_url=current_url %}
   {% else %}
-    {% include_cached global-nav.html site=site page=page lang=lang sidenav=sidenavcci2 current_url=current_url %}
+    {% include_cached global-nav.html site=site page=page sidenav=sidenavcci2 current_url=current_url %}
   {% endif %}
 
   {% include_cached hits-target.html %}
