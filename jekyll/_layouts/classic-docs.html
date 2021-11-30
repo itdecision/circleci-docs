@@ -8,27 +8,18 @@
 
 <div class="outer">
   {% assign lang = page.lang %}
-  {% assign sidenavcci2 = site.data.sidenav[lang] %}
-  {% assign sidenavstyle = site.data.sidenavstyle[lang] %}
-
-  {% if page.collection == "cci2" %}
-    {% include_cached global-nav.html site=site page=page sidenav=sidenavcci2 current_url=current_url %}
-  {% elsif page.collection == "style" %}
-    {% include_cached global-nav.html site=site page=page sidenav=sidenavstyle current_url=current_url %}
+  {% if page.collection == "style" %}
+    {% assign sidenav = site.data.sidenavstyle[lang] %}
   {% else %}
-    {% include_cached global-nav.html site=site page=page sidenav=sidenavcci2 current_url=current_url %}
+    {% assign sidenav = site.data.sidenav[lang] %}
   {% endif %}
+
+  {% include_cached global-nav.html site=site page=page sidenav=sidenav current_url=current_url %}
 
   {% include_cached hits-target.html %}
   <div class="main-body">
       {% assign current_url = page.url | slice: 1, page.url.size %}
-      {% if page.collection == "cci2" %}
-        {% include_cached sidebar.html lang=lang sidenav=sidenavcci2 current_url=current_url %}
-      {% elsif page.collection == "style" %}
-        {% include_cached sidebar.html lang=lang sidenav=sidenavstyle current_url=current_url %}
-      {% else %}
-        {% include_cached sidebar.html lang=lang sidenav=sidenavcci2 current_url=current_url %}
-      {% endif %}
+      {% include_cached sidebar.html lang=lang sidenav=sidenav current_url=current_url %}
     <div class="article-toc-footer">
       <div class="article-toc">
         <div class="article-container docs" id="main">

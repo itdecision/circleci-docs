@@ -14,9 +14,12 @@ ja:
   i18n_name: はじめよう
   icon: icons/sidebar/getting_started.svg
   children:
-    - name: Overview
+    - name: CircleCI Headings
       i18n_name: 概要
-      children:
-        - name: Welcome
-          i18n_name: ようこそ
-          link: ja/style/style-overview/
+      link: ja/style/style-headings/
+    - name: CircleCI Links
+      i18n_name: 概要
+      link: ja/style/style-links/
+    - name: CircleCI Overview
+      i18n_name: 概要
+      link: ja/style/style-overview/
